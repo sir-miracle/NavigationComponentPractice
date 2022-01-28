@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.navigationcomponentpractice.MainFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_fragmentA"
+            app:destination="@id/fragmentA" />
+        <action
+            android:id="@+id/action_mainFragment_to_fragmentB"
+            app:destination="@id/fragmentB" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentA"
+        android:name="com.example.navigationcomponentpractice.FragmentA"
+        android:label="Fragment A"
+        tools:layout="@layout/fragment_a" >
+        <action
+            android:id="@+id/action_fragmentA_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentB"
+        android:name="com.example.navigationcomponentpractice.FragmentB"
+        android:label="Fragment B"
+        tools:layout="@layout/fragment_b" >
+        <action
+            android:id="@+id/action_fragmentB_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_fragmentB_to_fragmentC"
+            app:destination="@id/fragmentC" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentC"
+        android:name="com.example.navigationcomponentpractice.FragmentC"
+        android:label="fragment_c"
+        tools:layout="@layout/fragment_c" >
+        <action
+            android:id="@+id/action_fragmentC_to_fragmentB2"
+            app:destination="@id/fragmentB" />
+        <argument
+            android:name="recievedMessage"
+            app:argType="string" />
+    </fragment>
+</navigation>
